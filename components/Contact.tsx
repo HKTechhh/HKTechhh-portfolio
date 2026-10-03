@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Download, Mail, Send } from "lucide-react";
 import { profile, socials } from "@/lib/data";
-import { socialIcons } from "./Icons";
+import { DiscordIcon, socialIcons } from "./Icons";
 import { Reveal } from "./Reveal";
 
 const field =
@@ -11,6 +11,17 @@ const field =
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  async function copyDiscord() {
+    try {
+      await navigator.clipboard.writeText(profile.discord);
+    } catch {
+      /* clipboard unavailable — username is still visible on the button */
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2200);
+  }
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -62,6 +73,24 @@ export function Contact() {
                     </li>
                   );
                 })}
+                <li className="sm:col-span-2">
+                  <button
+                    type="button"
+                    onClick={copyDiscord}
+                    className="btn-ghost flex w-full items-center gap-3 rounded-2xl p-3.5 text-left"
+                  >
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-white" style={{ background: "#5865F2" }}>
+                      <DiscordIcon className="h-5 w-5" />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-bold">Discord</span>
+                      <span className="block truncate text-sm font-normal text-muted">{profile.discord}</span>
+                    </span>
+                    <span role="status" className="shrink-0 rounded-full bg-bg px-3 py-1 font-mono text-xs font-semibold text-teal-text">
+                      {copied ? "Copied ✓" : "Click to copy"}
+                    </span>
+                  </button>
+                </li>
               </ul>
 
               <div className="mt-6 flex flex-wrap gap-3">

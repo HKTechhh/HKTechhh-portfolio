@@ -13,6 +13,7 @@ export const profile = {
     "I build and ship real products — from database design to a polished UI — and automate the boring parts so you can focus on growth.",
   whatsapp: "254741032236",
   whatsappDisplay: "+254 741 032 236",
+  discord: "HKTechhh",
 };
 
 export const socials = [
@@ -24,6 +25,7 @@ export const socials = [
 
 export const services = [
   "Web development",
+  "App development",
   "Python & JavaScript",
   "Automation",
   "Simulation",
