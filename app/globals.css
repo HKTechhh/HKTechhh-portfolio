@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fff8ef;
+  --surface: #ffffff;
+  --surface-2: #fff0dc;
+  --fg: #10142a;
+  --muted: #474d66;
+  --border: rgba(16, 20, 42, 0.13);
+  --gold: #ffb400;
+  --coral: #ff5a5f;
+  --teal: #0ea5a0;
+  --gold-text: #865500;
+  --coral-text: #c0202b;
+  --teal-text: #0a7773;
+  --grad-a: #c97b00;
+  --grad-b: #d62839;
+  --shadow: 0 20px 50px -20px rgba(16, 20, 42, 0.25);
+}
+
+.dark {
+  --bg: #0b0f1a;
+  --surface: #121829;
+  --surface-2: #182038;
+  --fg: #f4f1ea;
+  --muted: #aab1c7;
+  --border: rgba(255, 255, 255, 0.11);
+  --gold-text: #ffc933;
+  --coral-text: #ff7a7e;
+  --teal-text: #2dd4bf;
+  --grad-a: #ffb400;
+  --grad-b: #ff5a5f;
+  --shadow: 0 25px 60px -25px rgba(0, 0, 0, 0.8);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--border);
+  --color-gold: var(--gold);
+  --color-coral: var(--coral);
+  --color-teal: var(--teal);
+  --color-gold-text: var(--gold-text);
+  --color-coral-text: var(--coral-text);
+  --color-teal-text: var(--teal-text);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space);
+  --font-mono: var(--font-jetbrains);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--gold);
+  color: #10142a;
+}
+
+:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.font-display {
+  font-family: var(--font-space), system-ui, sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--grad-a), var(--grad-b));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 70%);
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, var(--gold), var(--coral));
+  color: #10142a;
+  font-weight: 700;
+  box-shadow: 0 10px 30px -10px rgba(255, 90, 95, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 36px -10px rgba(255, 90, 95, 0.7);
+}
+
+.btn-ghost {
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--fg);
+  font-weight: 600;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--coral);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--a, var(--gold)) 70%, transparent);
+}
+
+/* rotating gradient ring behind the hero photo */
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.ring {
+  background: conic-gradient(from 0deg, var(--gold), var(--coral), var(--teal), var(--gold));
+  animation: spin-slow 9s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float { animation: float 5s ease-in-out infinite; }
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 38s linear infinite; width: max-content; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); }
+  100% { box-shadow: 0 0 0 12px rgba(45, 212, 191, 0); }
+}
+.pulse-dot { animation: pulse-dot 1.8s ease-out infinite; }
+
+/* "Born to Solve Problems" — always-on neon glow */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 14px -2px rgba(255, 180, 0, 0.55), 0 0 34px -6px rgba(255, 90, 95, 0.45), inset 0 0 14px -6px rgba(255, 180, 0, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 24px 0 rgba(255, 180, 0, 0.8), 0 0 56px -4px rgba(255, 90, 95, 0.65), inset 0 0 20px -4px rgba(255, 90, 95, 0.4);
+  }
+}
+.glow-tag {
+  border: 1.5px solid color-mix(in srgb, var(--gold) 70%, var(--coral));
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  animation: glow-pulse 2.6s ease-in-out infinite;
+}
+.glow-tag .text-gradient {
+  filter: drop-shadow(0 0 8px rgba(255, 180, 0, 0.55));
+}
+.glow-emoji {
+  filter: drop-shadow(0 0 8px rgba(255, 180, 0, 0.9));
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+.caret { animation: blink 1s steps(1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ring, .float, .marquee-track, .pulse-dot, .caret { animation: none; }
+  .glow-tag { animation: none; box-shadow: 0 0 22px -2px rgba(255, 180, 0, 0.7), 0 0 44px -6px rgba(255, 90, 95, 0.5); }
+  * { transition-duration: 0.01ms !important; }
+}
