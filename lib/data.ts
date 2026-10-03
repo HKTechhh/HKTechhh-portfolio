@@ -183,6 +183,6 @@ export const experience = [
 ];
 
 export const education = [
-  { title: "BSc Computer Science", org: "Maseno University", period: "2016 – 2020" },
+  { title: "BSc Computer Science", org: "Maseno University", period: "2021 – 2025" },
   { title: "Full-Stack Development & LLM Integration", org: "Self-directed", period: "Ongoing" },
 ];
