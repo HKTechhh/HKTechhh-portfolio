@@ -41,5 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 # local-only source files (originals; the site uses the optimized copies in /public)
-/Condon_Roger_CV.pdf
+/Hadson_Mumo_CV.pdf
 /WhatsApp Image*.jpeg
