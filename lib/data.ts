@@ -17,10 +17,10 @@ export const profile = {
 };
 
 export const socials = [
-  { id: "whatsapp", label: "WhatsApp", handle: "+254 741 032 236", href: "https://wa.me/254741032236?text=Hi%20Hadson%2C%20I%27d%20like%20to%20work%20with%20you.", color: "#25D366" },
-  { id: "github", label: "GitHub", handle: "HKTechhh", href: "https://github.com/HKTechhh", color: "#8B949E" },
-  { id: "instagram", label: "Instagram", handle: "kanavu.codes", href: "https://instagram.com/kanavu.codes", color: "#E1306C" },
-  { id: "x", label: "X", handle: "@MumoHadson", href: "https://x.com/MumoHadson", color: "#8B98A5" },
+  { id: "whatsapp", label: "WhatsApp", handle: "+254 741 032 236", href: "https://wa.me/254741032236?text=Hi%20Hadson%2C%20I%27d%20like%20to%20work%20with%20you.", color: "#0077B6" },
+  { id: "github", label: "GitHub", handle: "HKTechhh", href: "https://github.com/HKTechhh", color: "#0077B6" },
+  { id: "instagram", label: "Instagram", handle: "kanavu.codes", href: "https://instagram.com/kanavu.codes", color: "#0077B6" },
+  { id: "x", label: "X", handle: "@MumoHadson", href: "https://x.com/MumoHadson", color: "#0077B6" },
 ] as const;
 
 export const services = [
@@ -57,13 +57,13 @@ export type SkillGroup = {
 };
 
 export const skillGroups: SkillGroup[] = [
-  { title: "Frontend", blurb: "Fast, accessible interfaces people enjoy using.", icon: "layout", a: "#FFB400", b: "#FF8A3D", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive UI"] },
-  { title: "Backend & Data", blurb: "Solid APIs, clean schemas, payments that work.", icon: "server", a: "#FF5A5F", b: "#FF8A3D", skills: ["Python / Django", "PHP / Laravel", "PostgreSQL", "REST APIs", "M-Pesa integration", "Database design"] },
-  { title: "Automation & AI", blurb: "Code that works while I sleep.", icon: "bot", a: "#14B8A6", b: "#22D3EE", skills: ["Playwright automation", "LLM API integration", "Prompt engineering", "Remotion (programmatic video)", "Computer vision"] },
-  { title: "Security", blurb: "Think like an attacker, build like a defender.", icon: "shield", a: "#FF5A5F", b: "#C026D3", skills: ["Penetration testing", "Web app security", "Vulnerability assessment"] },
-  { title: "Systems & SaaS", blurb: "Infrastructure and tools that keep things running.", icon: "cog", a: "#14B8A6", b: "#FFB400", skills: ["System administration", "Linux & Windows", "SaaS tools", "Proxy infrastructure", "Virtual numbers"] },
-  { title: "Research & Analysis", blurb: "Numbers, models and reports that make sense.", icon: "chart", a: "#FFB400", b: "#FF5A5F", skills: ["SPSS", "Matlab", "Excel", "Simulation", "Research reports"] },
-  { title: "Writing & Content", blurb: "Clear technical and academic communication.", icon: "pen", a: "#FF8A3D", b: "#FF5A5F", skills: ["Technical writing", "Academic writing (APA/MLA)", "PowerPoint design", "Editing"] },
+  { title: "Frontend", blurb: "Fast, accessible interfaces people enjoy using.", icon: "layout", a: "#48CAE4", b: "#ADE8F4", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive UI"] },
+  { title: "Backend & Data", blurb: "Solid APIs, clean schemas, payments that work.", icon: "server", a: "#0096C7", b: "#ADE8F4", skills: ["Python / Django", "PHP / Laravel", "PostgreSQL", "REST APIs", "M-Pesa integration", "Database design"] },
+  { title: "Automation & AI", blurb: "Code that works while I sleep.", icon: "bot", a: "#2FA36B", b: "#90E0EF", skills: ["Playwright automation", "LLM API integration", "Prompt engineering", "Remotion (programmatic video)", "Computer vision"] },
+  { title: "Security", blurb: "Think like an attacker, build like a defender.", icon: "shield", a: "#0096C7", b: "#6FD6A6", skills: ["Penetration testing", "Web app security", "Vulnerability assessment"] },
+  { title: "Systems & SaaS", blurb: "Infrastructure and tools that keep things running.", icon: "cog", a: "#2FA36B", b: "#48CAE4", skills: ["System administration", "Linux & Windows", "SaaS tools", "Proxy infrastructure", "Virtual numbers"] },
+  { title: "Research & Analysis", blurb: "Numbers, models and reports that make sense.", icon: "chart", a: "#48CAE4", b: "#0096C7", skills: ["SPSS", "Matlab", "Excel", "Simulation", "Research reports"] },
+  { title: "Writing & Content", blurb: "Clear technical and academic communication.", icon: "pen", a: "#ADE8F4", b: "#0096C7", skills: ["Technical writing", "Academic writing (APA/MLA)", "PowerPoint design", "Editing"] },
 ];
 
 export const marquee = [
@@ -92,8 +92,8 @@ export const projects: Project[] = [
     problem: "Kenyan writers and clients lack a marketplace built around local payment habits — most platforms assume cards, not M-Pesa.",
     outcome: "A full-stack marketplace with M-Pesa checkout built in from day one, designed for the Kenyan market.",
     stack: ["Django", "React", "TypeScript", "PostgreSQL", "M-Pesa"],
-    a: "#FFB400",
-    b: "#FF5A5F",
+    a: "#48CAE4",
+    b: "#0096C7",
   },
   {
     n: "02",
@@ -103,8 +103,8 @@ export const projects: Project[] = [
     problem: "Driver emotion and stress affect road safety, but few systems detect it live from an ordinary webcam.",
     outcome: "Compared CNN vs VGG16 models, wrote a 15-page research paper, and shipped a real-time local webcam web app.",
     stack: ["Python", "CNN", "VGG16", "OpenCV", "Web app"],
-    a: "#14B8A6",
-    b: "#22D3EE",
+    a: "#2FA36B",
+    b: "#90E0EF",
   },
   {
     n: "03",
@@ -114,8 +114,8 @@ export const projects: Project[] = [
     problem: "Small businesses and individuals need reliable web, AI and infrastructure services without enterprise overhead.",
     outcome: "A founder-led venture offering web/app dev, AI subscriptions, proxies and virtual numbers — with its own gold/coral brand and a maintained mono-repo.",
     stack: ["Next.js", "TypeScript", "Mono-repo", "Branding", "Infrastructure"],
-    a: "#FF8A3D",
-    b: "#FFB400",
+    a: "#ADE8F4",
+    b: "#48CAE4",
   },
   {
     n: "04",
@@ -125,8 +125,8 @@ export const projects: Project[] = [
     problem: "Producing video ads by hand is slow and hard to repeat or tweak across campaigns.",
     outcome: "Programmatic ad generation with Remotion's Series/Sequence components — campaigns like “FuturisticAd” rendered straight from React code.",
     stack: ["Remotion", "React", "TypeScript"],
-    a: "#C026D3",
-    b: "#FF5A5F",
+    a: "#48CAE4",
+    b: "#2FA36B",
   },
   {
     n: "05",
@@ -136,8 +136,8 @@ export const projects: Project[] = [
     problem: "Winning freelance orders means being first — and manually refreshing a platform all day doesn't scale.",
     outcome: "A Playwright bot that bids automatically, running reliably across both Linux and Windows environments.",
     stack: ["Playwright", "Python", "Linux", "Windows"],
-    a: "#14B8A6",
-    b: "#FFB400",
+    a: "#2FA36B",
+    b: "#48CAE4",
   },
 ];
 
@@ -150,7 +150,7 @@ export const experience = [
       "Run a digital services venture: web/app development, AI subscriptions, proxies and virtual numbers.",
       "Own the brand, the mono-repo and delivery end to end.",
     ],
-    a: "#FFB400",
+    a: "#48CAE4",
   },
   {
     role: "Full-Stack Software Developer (Freelance)",
@@ -160,7 +160,7 @@ export const experience = [
       "Built full-stack apps with React/Next.js and Django or Laravel, balancing performance and maintainability.",
       "Integrated LLM APIs (Anthropic, OpenRouter, Groq) into production, and automated end-to-end QA with Playwright.",
     ],
-    a: "#FF5A5F",
+    a: "#0096C7",
   },
   {
     role: "Academic Freelance Writer & Content Professional",
@@ -170,7 +170,7 @@ export const experience = [
       "Wrote hundreds of original pieces across computer science, finance, statistics and technology.",
       "Designed professional PowerPoint decks that communicate technical content clearly.",
     ],
-    a: "#14B8A6",
+    a: "#2FA36B",
   },
   {
     role: "AI Training & LLM Evaluation (Freelance)",
@@ -180,11 +180,25 @@ export const experience = [
       "Evaluated LLM responses for accuracy, safety and technical correctness against detailed rubrics.",
       "Ranked and compared outputs with evidence-backed justifications, and reviewed code quality in Python and JavaScript.",
     ],
-    a: "#FF8A3D",
+    a: "#6FD6A6",
   },
 ];
 
 export const education = [
   { title: "BSc Computer Science", org: "Maseno University", period: "2021 – 2025" },
   { title: "Full-Stack Development & LLM Integration", org: "Self-directed", period: "Ongoing" },
+];
+
+/** Revealed by the "…and more" button in the services banner. */
+export const moreServices = [
+  "Penetration testing",
+  "System administration",
+  "SaaS tools",
+  "Playwright automation",
+  "Remotion video ads",
+  "M-Pesa integration",
+  "Database design",
+  "Prompt engineering",
+  "Technical & academic writing",
+  "PowerPoint design",
 ];

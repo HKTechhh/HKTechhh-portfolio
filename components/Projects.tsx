@@ -41,16 +41,16 @@ function ProjectCard({ p, wide }: { p: Project; wide?: boolean }) {
         </div>
 
         <div className={`mt-6 grid gap-5 ${wide ? "lg:grid-cols-2" : ""}`}>
-          <Block label="Problem" color="var(--coral-text)">
+          <Block label="Problem" color="var(--sky-text)">
             {p.problem}
           </Block>
-          <Block label="Outcome" color="var(--teal-text)">
+          <Block label="Outcome" color="var(--leaf-text)">
             {p.outcome}
           </Block>
         </div>
 
         <div className="mt-6 flex-1" />
-        <Block label="Stack" color="var(--gold-text)">
+        <Block label="Stack" color="var(--ice-text)">
           <ul className="mt-2 flex flex-wrap gap-2">
             {p.stack.map((s) => (
               <li key={s} className="rounded-lg border border-line bg-bg px-2.5 py-1 font-mono text-xs font-medium text-fg">

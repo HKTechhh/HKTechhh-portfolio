@@ -54,7 +54,7 @@ export function Navbar() {
     >
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:font-bold focus:text-[#10142a]"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-lg focus:bg-ice focus:px-4 focus:py-2 focus:font-bold focus:text-[#10142a]"
       >
         Skip to content
       </a>
@@ -62,7 +62,7 @@ export function Navbar() {
         <a href="#top" className="font-display text-xl font-bold tracking-tight">
           <span className="text-gradient">HK</span>
           <span>Techhh</span>
-          <span className="text-coral-text">.</span>
+          <span className="text-sky-text">.</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -110,7 +110,7 @@ export function Navbar() {
       <motion.div
         aria-hidden
         style={{ scaleX: width }}
-        className="h-[3px] origin-left bg-gradient-to-r from-gold via-coral to-teal"
+        className="h-[3px] origin-left bg-gradient-to-r from-ice via-sky to-leaf"
       />
     </header>
   );

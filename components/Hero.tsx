@@ -34,10 +34,10 @@ function useTyping(words: string[], enabled: boolean) {
 }
 
 const chips = [
-  { label: "Next.js", pos: "left-[-6%] top-[12%]", delay: "0s", c: "#FFB400" },
-  { label: "Django", pos: "right-[-4%] top-[22%]", delay: "-1.4s", c: "#14B8A6" },
-  { label: "Playwright", pos: "left-[-8%] bottom-[22%]", delay: "-2.6s", c: "#FF5A5F" },
-  { label: "Remotion", pos: "right-[-2%] bottom-[10%]", delay: "-3.8s", c: "#C026D3" },
+  { label: "Next.js", pos: "left-[-6%] top-[12%]", delay: "0s", c: "#48CAE4" },
+  { label: "Django", pos: "right-[-4%] top-[22%]", delay: "-1.4s", c: "#2FA36B" },
+  { label: "Playwright", pos: "left-[-8%] bottom-[22%]", delay: "-2.6s", c: "#0096C7" },
+  { label: "Remotion", pos: "right-[-2%] bottom-[10%]", delay: "-3.8s", c: "#0077B6" },
 ];
 
 function Portrait() {
@@ -45,7 +45,7 @@ function Portrait() {
   return (
     <div className="relative mx-auto w-full max-w-[420px]">
       {/* glow */}
-      <div aria-hidden className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-gold/40 via-coral/30 to-teal/30 blur-3xl" />
+      <div aria-hidden className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-ice/40 via-sky/30 to-leaf/30 blur-3xl" />
       {/* rotating ring */}
       <div className="relative overflow-hidden rounded-[2.2rem] p-[5px]">
         <div aria-hidden className="ring absolute -inset-1/2" />
@@ -107,9 +107,9 @@ export function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden pt-28 pb-20 sm:pt-36">
       <div aria-hidden className="bg-grid absolute inset-0 -z-10" />
-      <div aria-hidden className="absolute -top-32 -left-24 -z-10 h-96 w-96 rounded-full bg-gold/25 blur-3xl" />
-      <div aria-hidden className="absolute top-40 -right-24 -z-10 h-96 w-96 rounded-full bg-coral/25 blur-3xl" />
-      <div aria-hidden className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-teal/20 blur-3xl" />
+      <div aria-hidden className="absolute -top-32 -left-24 -z-10 h-96 w-96 rounded-full bg-ice/25 blur-3xl" />
+      <div aria-hidden className="absolute top-40 -right-24 -z-10 h-96 w-96 rounded-full bg-sky/25 blur-3xl" />
+      <div aria-hidden className="absolute bottom-0 left-1/3 -z-10 h-72 w-72 rounded-full bg-leaf/20 blur-3xl" />
 
       <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
@@ -118,7 +118,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-6 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-line bg-surface px-4 py-2 text-sm font-medium"
           >
-            <span className="pulse-dot h-2.5 w-2.5 rounded-full bg-teal" aria-hidden />
+            <span className="pulse-dot h-2.5 w-2.5 rounded-full bg-leaf" aria-hidden />
             Available for work
             <span className="hidden h-4 w-px bg-line sm:block" aria-hidden />
             <span className="inline-flex items-center gap-1 text-muted">
@@ -141,13 +141,13 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mt-5 min-h-[2.2rem] font-mono text-xl font-semibold text-teal-text sm:text-2xl"
+            className="mt-5 min-h-[2.2rem] font-mono text-xl font-semibold text-leaf-text sm:text-2xl"
             aria-label={profile.roles.join(", ")}
           >
             <span aria-hidden>
               {"> "}
               {role}
-              <span className="caret ml-0.5 inline-block h-6 w-[3px] translate-y-1 bg-coral" />
+              <span className="caret ml-0.5 inline-block h-6 w-[3px] translate-y-1 bg-sky" />
             </span>
           </motion.p>
 
@@ -201,7 +201,7 @@ export function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${s.label}: ${s.handle}`}
-                    className="btn-ghost grid h-11 w-11 place-items-center rounded-full hover:text-coral-text"
+                    className="btn-ghost grid h-11 w-11 place-items-center rounded-full hover:text-sky-text"
                   >
                     <Icon className="h-5 w-5" />
                   </a>

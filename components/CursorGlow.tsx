@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-/** Soft gold/coral glow that follows the pointer (fine pointers only, no reduced motion). */
+/** Soft ice-blue/green glow that follows the pointer (fine pointers only, no reduced motion). */
 export function CursorGlow() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,7 +26,7 @@ export function CursorGlow() {
       ref={ref}
       aria-hidden
       className="pointer-events-none fixed top-0 left-0 z-0 h-[400px] w-[400px] rounded-full opacity-0 blur-3xl transition-opacity duration-500"
-      style={{ background: "radial-gradient(circle, rgba(255,180,0,0.16), rgba(255,90,95,0.10) 50%, transparent 70%)" }}
+      style={{ background: "radial-gradient(circle, rgba(0,150,199,0.14), rgba(47,163,107,0.08) 50%, transparent 70%)" }}
     />
   );
 }

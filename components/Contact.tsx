@@ -7,7 +7,7 @@ import { DiscordIcon, socialIcons } from "./Icons";
 import { Reveal } from "./Reveal";
 
 const field =
-  "w-full rounded-xl border border-line bg-bg px-4 py-3 text-fg placeholder:text-muted/70 transition-colors focus:border-coral";
+  "w-full rounded-xl border border-line bg-bg px-4 py-3 text-fg placeholder:text-muted/70 transition-colors focus:border-sky";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -35,14 +35,14 @@ export function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-6xl px-5 py-24">
       <Reveal className="relative overflow-hidden rounded-[2.5rem] p-[2px]">
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-gold via-coral to-teal" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-ice via-sky to-leaf" />
         <div className="relative rounded-[calc(2.5rem-2px)] bg-surface px-6 py-12 sm:px-12 sm:py-16">
-          <div aria-hidden className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
-          <div aria-hidden className="absolute -right-16 -bottom-24 h-72 w-72 rounded-full bg-coral/20 blur-3xl" />
+          <div aria-hidden className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-ice/20 blur-3xl" />
+          <div aria-hidden className="absolute -right-16 -bottom-24 h-72 w-72 rounded-full bg-sky/20 blur-3xl" />
 
           <div className="relative grid gap-12 lg:grid-cols-2">
             <div>
-              <p className="font-mono text-sm font-semibold tracking-widest text-coral-text uppercase">Contact</p>
+              <p className="font-mono text-sm font-semibold tracking-widest text-sky-text uppercase">Contact</p>
               <h2 className="font-display mt-2 text-4xl leading-tight font-bold sm:text-5xl">
                 Got a project? <span className="text-gradient">Let&apos;s build it.</span>
               </h2>
@@ -79,14 +79,14 @@ export function Contact() {
                     onClick={copyDiscord}
                     className="btn-ghost flex w-full items-center gap-3 rounded-2xl p-3.5 text-left"
                   >
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-white" style={{ background: "#5865F2" }}>
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl text-white" style={{ background: "#0077B6" }}>
                       <DiscordIcon className="h-5 w-5" />
                     </span>
                     <span className="min-w-0 flex-1">
                       <span className="block text-sm font-bold">Discord</span>
                       <span className="block truncate text-sm font-normal text-muted">{profile.discord}</span>
                     </span>
-                    <span role="status" className="shrink-0 rounded-full bg-bg px-3 py-1 font-mono text-xs font-semibold text-teal-text">
+                    <span role="status" className="shrink-0 rounded-full bg-bg px-3 py-1 font-mono text-xs font-semibold text-leaf-text">
                       {copied ? "Copied ✓" : "Click to copy"}
                     </span>
                   </button>

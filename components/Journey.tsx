@@ -28,9 +28,9 @@ export function Journey() {
                 <div className="card p-6" style={{ ["--a" as string]: e.a }}>
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                     <h3 className="font-display text-xl font-bold">{e.role}</h3>
-                    <span className="font-mono text-sm font-semibold text-coral-text">{e.period}</span>
+                    <span className="font-mono text-sm font-semibold text-sky-text">{e.period}</span>
                   </div>
-                  <p className="mt-0.5 font-medium text-gold-text">{e.org}</p>
+                  <p className="mt-0.5 font-medium text-ice-text">{e.org}</p>
                   <ul className="mt-3 space-y-2 text-muted">
                     {e.points.map((p) => (
                       <li key={p} className="flex gap-2.5">
@@ -50,16 +50,16 @@ export function Journey() {
           <div className="grid gap-5 sm:grid-cols-2">
             {education.map((ed, i) => (
               <Reveal key={ed.title} delay={i * 0.08}>
-                <div className="card flex h-full items-start gap-4 p-6" style={{ ["--a" as string]: i ? "#14B8A6" : "#FFB400" }}>
+                <div className="card flex h-full items-start gap-4 p-6" style={{ ["--a" as string]: i ? "#2FA36B" : "#48CAE4" }}>
                   <div
                     className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl text-[#10142a]"
-                    style={{ background: i ? "linear-gradient(135deg,#14B8A6,#22D3EE)" : "linear-gradient(135deg,#FFB400,#FF5A5F)" }}
+                    style={{ background: i ? "linear-gradient(135deg,#2FA36B,#90E0EF)" : "linear-gradient(135deg,#48CAE4,#0096C7)" }}
                   >
                     <GraduationCap size={24} aria-hidden />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-bold">{ed.title}</h3>
-                    <p className="mt-0.5 font-medium text-gold-text">{ed.org}</p>
+                    <p className="mt-0.5 font-medium text-ice-text">{ed.org}</p>
                     <p className="mt-1 font-mono text-sm text-muted">{ed.period}</p>
                   </div>
                 </div>

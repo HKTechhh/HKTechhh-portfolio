@@ -39,8 +39,8 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className="mb-12 max-w-2xl">
-      <p className="mb-3 font-mono text-sm font-semibold tracking-widest text-coral-text uppercase">
-        <span className="mr-2 inline-block h-2 w-2 rounded-full bg-gradient-to-r from-gold to-coral align-middle" />
+      <p className="mb-3 font-mono text-sm font-semibold tracking-widest text-sky-text uppercase">
+        <span className="mr-2 inline-block h-2 w-2 rounded-full bg-gradient-to-r from-ice to-sky align-middle" />
         {eyebrow}
       </p>
       <h2 className="font-display text-4xl leading-tight font-bold tracking-tight sm:text-5xl">{title}</h2>

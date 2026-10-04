@@ -69,7 +69,7 @@ export function Skills() {
           {loop.map((m, i) => (
             <span key={i} className="font-display flex items-center gap-10 text-2xl font-bold text-muted/70 whitespace-nowrap">
               {m}
-              <span className="text-coral">✦</span>
+              <span className="text-sky">✦</span>
             </span>
           ))}
         </div>

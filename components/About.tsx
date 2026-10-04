@@ -35,7 +35,7 @@ export function About() {
               <div
                 key={s.label}
                 className="card p-6"
-                style={{ ["--a" as string]: ["#FFB400", "#FF5A5F", "#14B8A6", "#FF8A3D"][i] }}
+                style={{ ["--a" as string]: ["#48CAE4", "#0096C7", "#2FA36B", "#ADE8F4"][i] }}
               >
                 <dt className="sr-only">{s.label}</dt>
                 <dd className="font-display text-5xl font-bold text-gradient">{s.value}</dd>
