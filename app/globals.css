@@ -4,12 +4,13 @@
 
 /* Palette: icy blue (#ADE8F4) + white + a calm emerald green */
 :root {
-  --bg: #f4fbfd;
-  --surface: #ffffff;
-  --surface-2: #e3f5fa;
-  --fg: #0a2536;
-  --muted: #46606e;
-  --border: rgba(10, 37, 54, 0.12);
+  --bg: #cfeff7;
+  --bg-image: linear-gradient(180deg, #ade8f4 0%, #c5ecf5 28%, #d3f1f8 60%, #bfe9f3 100%);
+  --surface: #f2fcfe;
+  --surface-2: #b6e4f0;
+  --fg: #082233;
+  --muted: #35505f;
+  --border: rgba(8, 62, 92, 0.2);
   --ice: #ade8f4;
   --sky: #0096c7;
   --leaf: #2fa36b;
@@ -23,6 +24,7 @@
 
 .dark {
   --bg: #07161f;
+  --bg-image: none;
   --surface: #0e2230;
   --surface-2: #12303f;
   --fg: #eaf7fb;
@@ -60,11 +62,13 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: var(--bg-image);
   color: var(--fg);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
 ::selection {
@@ -165,25 +169,37 @@ body {
 }
 .pulse-dot { animation: pulse-dot 1.8s ease-out infinite; }
 
-/* "Born to Solve Problems" — always-on glow */
+/* "Born to Solve Problems" — animated neon border, pulsing halo, shimmering text */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin-angle { to { --angle: 360deg; } }
 @keyframes glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 14px -2px rgba(0, 150, 199, 0.45), 0 0 34px -8px rgba(47, 163, 107, 0.35), inset 0 0 14px -6px rgba(0, 150, 199, 0.3);
+    box-shadow: 0 0 16px 1px rgba(0, 150, 199, 0.55), 0 0 38px 2px rgba(47, 163, 107, 0.4), 0 0 70px 6px rgba(72, 202, 228, 0.25);
   }
   50% {
-    box-shadow: 0 0 24px 0 rgba(0, 150, 199, 0.65), 0 0 52px -6px rgba(47, 163, 107, 0.5), inset 0 0 20px -4px rgba(47, 163, 107, 0.3);
+    box-shadow: 0 0 26px 4px rgba(0, 170, 220, 0.8), 0 0 60px 8px rgba(47, 190, 120, 0.55), 0 0 110px 14px rgba(72, 202, 228, 0.4);
   }
 }
+@keyframes shimmer { to { background-position: 200% center; } }
 .glow-tag {
-  border: 1.5px solid color-mix(in srgb, var(--sky) 70%, var(--leaf));
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  animation: glow-pulse 2.6s ease-in-out infinite;
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    conic-gradient(from var(--angle), #48cae4, #2fa36b, #ade8f4, #0096c7, #6fd6a6, #48cae4) border-box;
+  animation: spin-angle 4s linear infinite, glow-pulse 2.6s ease-in-out infinite;
 }
 .glow-tag .text-gradient {
-  filter: drop-shadow(0 0 8px rgba(0, 150, 199, 0.4));
+  background-image: linear-gradient(90deg, var(--grad-a), var(--grad-b), var(--ice-text), var(--grad-a));
+  background-size: 200% auto;
+  animation: shimmer 3.2s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(0, 170, 220, 0.55));
 }
 .glow-emoji {
-  filter: drop-shadow(0 0 8px rgba(0, 150, 199, 0.7));
+  filter: drop-shadow(0 0 10px rgba(0, 190, 230, 0.9));
 }
 
 @keyframes blink { 50% { opacity: 0; } }
@@ -199,6 +215,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ring, .float, .marquee-track, .pulse-dot, .caret, .pop-in { animation: none; }
-  .glow-tag { animation: none; box-shadow: 0 0 22px -2px rgba(0, 150, 199, 0.55), 0 0 44px -8px rgba(47, 163, 107, 0.4); }
+  .glow-tag, .glow-tag .text-gradient { animation: none; }
+  .glow-tag { box-shadow: 0 0 26px 3px rgba(0, 170, 220, 0.6), 0 0 56px 6px rgba(47, 190, 120, 0.4); }
   * { transition-duration: 0.01ms !important; }
 }

@@ -4,14 +4,9 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Menu, Moon, Sun, X } from "lucide-react";
+import { useNav, views } from "./NavProvider";
+import { StatusClock } from "./StatusClock";
 
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#journey", label: "Journey" },
-  { href: "#contact", label: "Contact" },
-];
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -34,6 +29,7 @@ function ThemeToggle() {
 }
 
 export function Navbar() {
+  const { active, go } = useNav();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -59,27 +55,35 @@ export function Navbar() {
         Skip to content
       </a>
       <nav aria-label="Primary" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="font-display text-xl font-bold tracking-tight">
+        <button type="button" onClick={() => go("home")} aria-label="HKTechhh — home" className="font-display text-xl font-bold tracking-tight">
           <span className="text-gradient">HK</span>
           <span>Techhh</span>
           <span className="text-sky-text">.</span>
-        </a>
+        </button>
 
         <ul className="hidden items-center gap-1 md:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="rounded-full px-4 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface hover:text-fg">
-                {l.label}
-              </a>
+          {views.map((v) => (
+            <li key={v.id}>
+              <button
+                type="button"
+                onClick={() => go(v.id)}
+                aria-current={active === v.id ? "page" : undefined}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  active === v.id ? "bg-surface text-fg shadow-sm ring-1 ring-line" : "text-muted hover:bg-surface hover:text-fg"
+                }`}
+              >
+                {v.label}
+              </button>
             </li>
           ))}
         </ul>
 
         <div className="flex items-center gap-2">
+          <StatusClock compact />
           <ThemeToggle />
-          <a href="#contact" className="btn-primary hidden rounded-full px-5 py-2.5 text-sm sm:inline-block">
+          <button type="button" onClick={() => go("contact")} className="btn-primary hidden rounded-full px-5 py-2.5 text-sm sm:inline-block">
             Hire me
-          </a>
+          </button>
           <button
             type="button"
             className="btn-ghost grid h-10 w-10 place-items-center rounded-full md:hidden"
@@ -96,11 +100,19 @@ export function Navbar() {
       {open && (
         <div id="mobile-menu" className="border-b border-line bg-bg/95 px-5 pb-5 backdrop-blur-xl md:hidden">
           <ul className="flex flex-col gap-1">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} onClick={() => setOpen(false)} className="block rounded-xl px-4 py-3 font-medium hover:bg-surface">
-                  {l.label}
-                </a>
+            {views.map((v) => (
+              <li key={v.id}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    go(v.id);
+                  }}
+                  aria-current={active === v.id ? "page" : undefined}
+                  className={`block w-full rounded-xl px-4 py-3 text-left font-medium hover:bg-surface ${active === v.id ? "bg-surface ring-1 ring-line" : ""}`}
+                >
+                  {v.label}
+                </button>
               </li>
             ))}
           </ul>

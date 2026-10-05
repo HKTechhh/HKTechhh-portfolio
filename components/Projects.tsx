@@ -77,11 +77,15 @@ export function Projects() {
         desc="Each build: the problem I started with, the stack I chose, and what came out the other side."
       />
       <div className="grid gap-6 lg:grid-cols-2">
-        {projects.map((p, i) => (
-          <Reveal key={p.n} delay={(i % 2) * 0.08} className={i === 0 ? "lg:col-span-2" : ""}>
-            <ProjectCard p={p} wide={i === 0} />
+        {projects.map((p, i) => {
+          // first card is always full-width; so is the last one when it would otherwise sit alone
+          const wide = i === 0 || (i === projects.length - 1 && projects.length % 2 === 0);
+          return (
+          <Reveal key={p.n} delay={(i % 2) * 0.08} className={wide ? "lg:col-span-2" : ""}>
+            <ProjectCard p={p} wide={wide} />
           </Reveal>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

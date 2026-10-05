@@ -3,9 +3,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { profile, socials } from "@/lib/data";
 import { socialIcons } from "./Icons";
+import { useNav } from "./NavProvider";
+import { StatusClock } from "./StatusClock";
 
 function useTyping(words: string[], enabled: boolean) {
   const [i, setI] = useState(0);
@@ -103,6 +105,7 @@ function Portrait() {
 export function Hero() {
   const reduce = useReducedMotion();
   const role = useTyping(profile.roles, !reduce);
+  const { go } = useNav();
 
   return (
     <section id="top" className="relative isolate overflow-hidden pt-28 pb-20 sm:pt-36">
@@ -155,11 +158,11 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
-            className="glow-tag mt-4 inline-flex items-center gap-2.5 rounded-full px-5 py-2 font-display text-lg font-bold tracking-wide sm:text-xl"
+            className="glow-tag mt-5 inline-flex items-center gap-2 rounded-full px-4 py-2 font-display text-[1.05rem] font-bold tracking-wide whitespace-nowrap sm:gap-3 sm:px-6 sm:py-2.5 sm:text-2xl"
           >
-            <span aria-hidden className="glow-emoji text-2xl">⚡</span>
+            <span aria-hidden className="glow-emoji text-xl sm:text-2xl">⚡</span>
             <span className="text-gradient">Born to Solve Problems</span>
-            <span aria-hidden className="glow-emoji text-2xl">🧠</span>
+            <span aria-hidden className="glow-emoji text-xl sm:text-2xl">🧠</span>
           </motion.p>
 
           <motion.p
@@ -180,9 +183,9 @@ export function Hero() {
             <a href={socials[0].href} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base">
               <Sparkles size={18} aria-hidden /> Hire me
             </a>
-            <a href="#projects" className="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base">
-              View projects <ArrowDown size={18} aria-hidden />
-            </a>
+            <button type="button" onClick={() => go("projects")} className="btn-ghost inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base">
+              View projects <ArrowRight size={18} aria-hidden />
+            </button>
           </motion.div>
 
           <motion.ul
@@ -209,6 +212,15 @@ export function Hero() {
               );
             })}
           </motion.ul>
+
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.65 }}
+            className="mt-7"
+          >
+            <StatusClock />
+          </motion.div>
         </div>
 
         <motion.div

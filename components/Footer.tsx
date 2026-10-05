@@ -1,8 +1,12 @@
+"use client";
+
 import { ArrowUp } from "lucide-react";
 import { socials } from "@/lib/data";
 import { socialIcons } from "./Icons";
+import { useNav } from "./NavProvider";
 
 export function Footer() {
+  const { go } = useNav();
   return (
     <footer className="border-t border-line px-5 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 sm:flex-row">
@@ -27,9 +31,9 @@ export function Footer() {
             );
           })}
           <li>
-            <a href="#top" aria-label="Back to top" className="btn-ghost ml-2 grid h-10 w-10 place-items-center rounded-full">
+            <button type="button" onClick={() => go("home")} aria-label="Back to home" className="btn-ghost ml-2 grid h-10 w-10 place-items-center rounded-full">
               <ArrowUp size={18} aria-hidden />
-            </a>
+            </button>
           </li>
         </ul>
       </div>

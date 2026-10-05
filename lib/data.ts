@@ -42,7 +42,7 @@ export const services = [
 
 export const stats = [
   { value: "4+", label: "Years shipping code" },
-  { value: "5", label: "Featured builds" },
+  { value: "10+", label: "Featured bids" },
   { value: "3", label: "Full-stack frameworks" },
   { value: "1", label: "Venture founded" },
 ];
@@ -138,6 +138,17 @@ export const projects: Project[] = [
     stack: ["Playwright", "Python", "Linux", "Windows"],
     a: "#2FA36B",
     b: "#48CAE4",
+  },
+  {
+    n: "06",
+    title: "Loan App",
+    tag: "Lending application",
+    status: "Developed",
+    problem: "Borrowers and lenders need a simple, trustworthy way to apply for, approve and track loans without paperwork and back-and-forth.",
+    outcome: "Designed and developed a loan app that takes the process from application through to approval and repayment tracking.",
+    stack: ["App development", "Backend API", "Database design"],
+    a: "#2FA36B",
+    b: "#90E0EF",
   },
 ];
 
