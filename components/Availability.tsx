@@ -9,7 +9,7 @@ export function Availability() {
       <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] p-[2px]">
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-ice via-sky to-leaf" />
         <div className="relative rounded-[calc(2rem-2px)] bg-surface px-6 py-10 sm:px-12">
-          <div aria-hidden className="absolute -top-20 -right-10 h-60 w-60 rounded-full bg-sky/20 blur-3xl" />
+          <div aria-hidden className="absolute -top-24 -right-16 h-72 w-72 blob-sky" />
           <div className="relative grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
             <div>
               <p className="font-mono text-sm font-semibold tracking-widest text-ice-text uppercase">Open for work 🚀</p>

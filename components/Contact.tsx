@@ -37,8 +37,8 @@ export function Contact() {
       <Reveal className="relative overflow-hidden rounded-[2.5rem] p-[2px]">
         <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-ice via-sky to-leaf" />
         <div className="relative rounded-[calc(2.5rem-2px)] bg-surface px-6 py-12 sm:px-12 sm:py-16">
-          <div aria-hidden className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-ice/20 blur-3xl" />
-          <div aria-hidden className="absolute -right-16 -bottom-24 h-72 w-72 rounded-full bg-sky/20 blur-3xl" />
+          <div aria-hidden className="absolute -top-28 -left-20 h-80 w-80 blob-ice" />
+          <div aria-hidden className="absolute -right-20 -bottom-28 h-80 w-80 blob-sky" />
 
           <div className="relative grid gap-12 lg:grid-cols-2">
             <div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { About } from "./About";
 import { Availability } from "./Availability";
@@ -116,18 +116,15 @@ export function Views() {
 
   return (
     <main id="main" ref={ref} tabIndex={-1} className="relative z-10 min-h-[calc(100vh-8rem)] outline-none">
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={active}
-          initial={reduce ? false : { opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reduce ? { opacity: 0 } : { opacity: 0, y: -10 }}
-          transition={{ duration: reduce ? 0 : 0.28, ease: "easeOut" }}
-        >
-          {pages[active]}
-          <PrevNext />
-        </motion.div>
-      </AnimatePresence>
+      <motion.div
+        key={active}
+        initial={reduce ? false : { opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: reduce ? 0 : 0.2, ease: "easeOut" }}
+      >
+        {pages[active]}
+        <PrevNext />
+      </motion.div>
     </main>
   );
 }

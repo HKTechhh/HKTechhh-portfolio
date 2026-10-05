@@ -3,12 +3,6 @@ export const profile = {
   handle: "HKTechhh",
   email: "hadsonbrookes@gmail.com",
   location: "Nairobi, Kenya",
-  roles: [
-    "Full-Stack Developer",
-    "Automation Engineer",
-    "Founder, HKTechhh Solutions",
-    "Freelance Writer",
-  ],
   valueProp:
     "I build and ship real products — from database design to a polished UI — and automate the boring parts so you can focus on growth.",
   whatsapp: "254741032236",

@@ -45,7 +45,7 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-line bg-bg/80 backdrop-blur-xl" : "bg-transparent"
+        scrolled ? "border-b border-line bg-bg/95" : "bg-transparent"
       }`}
     >
       <a
@@ -98,7 +98,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div id="mobile-menu" className="border-b border-line bg-bg/95 px-5 pb-5 backdrop-blur-xl md:hidden">
+        <div id="mobile-menu" className="border-b border-line bg-bg px-5 pb-5 md:hidden">
           <ul className="flex flex-col gap-1">
             {views.map((v) => (
               <li key={v.id}>

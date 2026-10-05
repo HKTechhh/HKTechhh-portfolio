@@ -18,8 +18,8 @@ function SkillCard({ g }: { g: SkillGroup }) {
     <article className="card group relative h-full overflow-hidden p-6" style={{ ["--a" as string]: g.a }}>
       <div
         aria-hidden
-        className="absolute -top-16 -right-16 h-40 w-40 rounded-full opacity-25 blur-2xl transition-opacity group-hover:opacity-60"
-        style={{ background: `linear-gradient(135deg, ${g.a}, ${g.b})` }}
+        className="absolute -top-16 -right-16 h-44 w-44 rounded-full opacity-60 transition-opacity group-hover:opacity-100"
+        style={{ background: `radial-gradient(closest-side, ${g.b}aa, transparent)` }}
       />
       <div
         className="relative grid h-12 w-12 place-items-center rounded-2xl text-[#10142a]"
