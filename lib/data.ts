@@ -99,7 +99,7 @@ export const projects: Project[] = [
     title: "Bidhawk",
     tag: "Auto-bidding bots · Win bids while you sleep",
     status: "Live · Still building",
-    problem: "Freelance writers and tutors win more orders by bidding first, but that means being online around the clock — and paying per-account caps on top.",
+    problem: "Bidding for orders by hand is exhausting, and nobody can stay online 24/7 — so the best jobs go to whoever bids first while you're asleep or busy.",
     outcome: "Desktop bots that place bids on freelance writing and tutoring platforms 24/7 on a pacing schedule. Customers subscribe and paste in their API key; licensing is seat-based (pay per platform account, no artificial caps) and verified with short-lived signed tokens. Pays via M-Pesa and cards, runs on Windows and Linux, and is still in active development.",
     stack: ["Django REST", "Next.js", "TypeScript", "PostgreSQL", "Redis + Celery", "Docker", "Paystack + M-Pesa", "Ed25519 licensing"],
     url: "https://bidhawk.shop/",
