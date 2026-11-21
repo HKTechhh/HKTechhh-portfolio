@@ -24,8 +24,8 @@ export function About() {
             subscriptions, proxies and virtual numbers. I built and launched{" "}
             <a href="https://penspan.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-text underline decoration-sky/50 underline-offset-4 hover:decoration-sky">
               Penspan
-            </a>{" "}
-            (formerly Write Chap Chap), a freelance writing marketplace, and I&apos;m now building{" "}
+            </a>
+            , a freelance writing marketplace, and I&apos;m now building{" "}
             <a href="https://bidhawk.shop/" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-text underline decoration-sky/50 underline-offset-4 hover:decoration-sky">
               Bidhawk
             </a>
