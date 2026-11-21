@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/lib/data";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -50,7 +51,7 @@ function ProjectCard({ p, wide }: { p: Project; wide?: boolean }) {
         </div>
 
         <div className="mt-6 flex-1" />
-        <Block label="Stack" color="var(--ice-text)">
+        <Block label={p.stackLabel ?? "Stack"} color="var(--ice-text)">
           <ul className="mt-2 flex flex-wrap gap-2">
             {p.stack.map((s) => (
               <li key={s} className="rounded-lg border border-line bg-bg px-2.5 py-1 font-mono text-xs font-medium text-fg">
@@ -59,6 +60,18 @@ function ProjectCard({ p, wide }: { p: Project; wide?: boolean }) {
             ))}
           </ul>
         </Block>
+
+        {p.url && (
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary mt-6 inline-flex w-fit items-center gap-2 rounded-full px-5 py-2.5 text-sm"
+          >
+            Visit {new URL(p.url).host} <ArrowUpRight size={16} aria-hidden />
+            <span className="sr-only">(opens in a new tab)</span>
+          </a>
+        )}
       </div>
     </article>
   );

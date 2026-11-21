@@ -73,6 +73,10 @@ export type Project = {
   problem: string;
   outcome: string;
   stack: string[];
+  /** heading for the chip list; defaults to "Stack" */
+  stackLabel?: string;
+  /** live site, shown as a "Visit" button on the card */
+  url?: string;
   a: string;
   b: string;
 };
@@ -80,17 +84,31 @@ export type Project = {
 export const projects: Project[] = [
   {
     n: "01",
-    title: "Write Chap Chap",
-    tag: "Freelance writing marketplace",
-    status: "In development",
-    problem: "Kenyan writers and clients lack a marketplace built around local payment habits — most platforms assume cards, not M-Pesa.",
-    outcome: "A full-stack marketplace with M-Pesa checkout built in from day one, designed for the Kenyan market.",
+    title: "Penspan",
+    tag: "Freelance writing marketplace · formerly Write Chap Chap",
+    status: "Live",
+    problem: "Hiring a freelance writer means risking late, plagiarised or AI-written work, while writers risk not getting paid for what they deliver.",
+    outcome: "Launched as Penspan: vetted writers, payments held in escrow, every delivery screened for AI content and plagiarism, and deadlines enforced — with M-Pesa checkout for the Kenyan market.",
     stack: ["Django", "React", "TypeScript", "PostgreSQL", "M-Pesa"],
+    url: "https://penspan.com/",
     a: "#48CAE4",
     b: "#0096C7",
   },
   {
     n: "02",
+    title: "Bidhawk",
+    tag: "Auto-bidding bots as a service",
+    status: "Live · Still building",
+    problem: "Freelance writers and tutors win more orders by bidding first, but bidding by hand is slow and juggling several accounts gets messy.",
+    outcome: "A live platform where users run auto-bidding bots on isolated seat profiles, with simple seat-based licensing and a dashboard to control it all. Still in active development, with new features on the way.",
+    stack: ["Auto-bidding bots", "Seat-based licensing", "Isolated profiles", "Dashboard control"],
+    stackLabel: "Features",
+    url: "https://bidhawk.shop/",
+    a: "#2FA36B",
+    b: "#6FD6A6",
+  },
+  {
+    n: "03",
     title: "Driver Emotion Recognition",
     tag: "Computer vision research",
     status: "Completed",
@@ -101,7 +119,7 @@ export const projects: Project[] = [
     b: "#90E0EF",
   },
   {
-    n: "03",
+    n: "04",
     title: "HKTechhh Solutions",
     tag: "My digital services venture",
     status: "Running",
@@ -112,7 +130,7 @@ export const projects: Project[] = [
     b: "#48CAE4",
   },
   {
-    n: "04",
+    n: "05",
     title: "Remotion Ad Pipeline",
     tag: "Code-driven video ads",
     status: "Shipped",
@@ -123,7 +141,7 @@ export const projects: Project[] = [
     b: "#2FA36B",
   },
   {
-    n: "05",
+    n: "06",
     title: "Edusson Bot",
     tag: "Auto-bidding automation",
     status: "Shipped",
@@ -134,7 +152,7 @@ export const projects: Project[] = [
     b: "#48CAE4",
   },
   {
-    n: "06",
+    n: "07",
     title: "Loan App",
     tag: "Lending application",
     status: "Developed",

@@ -21,8 +21,15 @@ export function About() {
           </p>
           <p>
             I run <strong className="text-fg">HKTechhh Solutions</strong>, a digital services venture offering web &amp; app development, AI
-            subscriptions, proxies and virtual numbers. I&apos;m also building{" "}
-            <strong className="text-fg">Write Chap Chap</strong>, a freelance writing marketplace with M-Pesa payments for the Kenyan market.
+            subscriptions, proxies and virtual numbers. I built and launched{" "}
+            <a href="https://penspan.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-text underline decoration-sky/50 underline-offset-4 hover:decoration-sky">
+              Penspan
+            </a>{" "}
+            (formerly Write Chap Chap), a freelance writing marketplace, and I&apos;m now building{" "}
+            <a href="https://bidhawk.shop/" target="_blank" rel="noopener noreferrer" className="font-bold text-sky-text underline decoration-sky/50 underline-offset-4 hover:decoration-sky">
+              Bidhawk
+            </a>
+            , an auto-bidding platform for freelance writers and tutors.
           </p>
           <p>
             I like owning problems end to end — founder mindset, engineering depth, and a habit of automating anything I have to do twice.
